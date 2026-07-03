@@ -149,21 +149,9 @@ The application automatically downloads the file during startup.
 
 ## 📷 Application Preview
 
-
-Example:
-
-```
-assets/APPUI
-```
-
-Then display it like this:
-
-```markdown
-## 📷 Application Preview
-![Application Screenshot](assets/APPUI.png)
-```
-
----
+| Home Page | Recommendation Result |
+|-----------|-----------------------|
+| ![Home Page](assets/app_home.png) | ![Recommendation Result](assets/app_result.png) |
 
 ## 🎯 Future Improvements
 
