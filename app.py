@@ -3,18 +3,14 @@ import pandas as pd
 import pickle
 from huggingface_hub import hf_hub_download
 
-# ==========================================
 # Page Configuration
-# ==========================================
 st.set_page_config(
     page_title="Movie Recommender System",
     page_icon="🎬",
     layout="wide"
 )
 
-# ==========================================
 # Load Data
-# ==========================================
 @st.cache_resource
 def load_data():
 
@@ -38,9 +34,7 @@ def load_data():
 
 movies, similarity = load_data()
 
-# ==========================================
 # Recommendation Function
-# ==========================================
 def recommend(movie):
 
     index = movies[movies["title"] == movie].index[0]
@@ -61,9 +55,7 @@ def recommend(movie):
     return recommended_movies
 
 
-# ==========================================
 # Sidebar
-# ==========================================
 st.sidebar.title("🎬 Movie Recommender")
 
 st.sidebar.markdown("### 📌 Project Information")
@@ -100,9 +92,7 @@ st.sidebar.markdown("---")
 
 st.sidebar.success("Developed by **Amrit Raj**")
 
-# ==========================================
 # Main Page
-# ==========================================
 
 st.title("🎬 Movie Recommendation System")
 
@@ -117,18 +107,14 @@ Simply choose a movie below and click **Recommend**.
 
 st.markdown("---")
 
-# ==========================================
 # Movie Selection
-# ==========================================
 
 selected_movie = st.selectbox(
     "🎥 Select a Movie",
     movies["title"].values
 )
 
-# ==========================================
 # Recommend Button
-# ==========================================
 
 if st.button("🚀 Recommend Movies", use_container_width=True):
 
@@ -139,9 +125,7 @@ if st.button("🚀 Recommend Movies", use_container_width=True):
     for i, movie in enumerate(recommendations, start=1):
         st.write(f"**{i}. {movie}**")
 
-# ==========================================
 # About Project
-# ==========================================
 
 st.markdown("---")
 
